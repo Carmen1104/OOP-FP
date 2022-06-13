@@ -96,7 +96,7 @@ public class Game extends JPanel implements KeyListener, ActionListener{
         timer.start();
 
         if (play) {
-            if (new Rectangle(ballPosX, ballPosY, 20, 20).intersects(new Rectangle(playerX, 550, 100, 8))) {
+            if (new Rectangle(ballPosX, ballPosY, 20, 20).intersects(new Rectangle(playerX, 550, 30, 8))) {
                 ballYDir = -ballYDir;
                 ballXDir = -2;
             }
@@ -130,7 +130,7 @@ public class Game extends JPanel implements KeyListener, ActionListener{
                             score += 5;
 
                             // when ball hit right or left of brick
-                            if (ballPosX + 19 <= brickRect.x || ballPosX + 1 >= brickRect.x + bricksWidth) {
+                            if (ballPosX + 19 <= brickRect.x || ballPosX + 1 >= brickRect.x + brickRect.width) {
                                 ballXDir = -ballXDir;
                             } 
                             // when ball hits top or bottom of brick
